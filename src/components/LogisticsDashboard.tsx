@@ -4,6 +4,7 @@ import WarehouseInventory from './WarehouseInventory';
 import DeliveryStatus from './DeliveryStatus';
 
 const LogisticsDashboard: React.FC = () => {
+  
   const [warehouseItems, setWarehouseItems] = useState<number>(100);
   const [isTruckLeft, setIsTruckLeft] = useState<boolean>(false);
   const [dispatchQuantity, setDispatchQuantity] = useState<number>(0);

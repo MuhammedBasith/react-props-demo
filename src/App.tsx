@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import LogisticsDashboard from './componenets/LogisticsDashboard';
+import LogisticsDashboard from './components/LogisticsDashboard';
 
 
 

@@ -15,6 +15,8 @@ const DeliveryStatus: React.FC<DeliveryStatusProps> = ({ isTruckLeft, onTruckDep
       <h2>Delivery Status</h2>
       <p>{isTruckLeft ? "The truck has left the warehouse." : "The truck is still in the warehouse."}</p>
 
+      
+
       {!isTruckLeft && (
         <div>
           <input 
@@ -22,7 +24,7 @@ const DeliveryStatus: React.FC<DeliveryStatusProps> = ({ isTruckLeft, onTruckDep
             value={dispatchQuantity} 
             onChange={(e) => setDispatchQuantity(Number(e.target.value))}
             max={20} 
-            min={0}
+            min={5}
             placeholder="Enter quantity to dispatch"
           />
           <p>Available for dispatch: {Math.min(warehouseItems, 20)}</p>
