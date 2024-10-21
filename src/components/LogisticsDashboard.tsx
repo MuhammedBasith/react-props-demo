@@ -8,11 +8,13 @@ const LogisticsDashboard: React.FC = () => {
   const [warehouseItems, setWarehouseItems] = useState<number>(100);
   const [isTruckLeft, setIsTruckLeft] = useState<boolean>(false);
   const [dispatchQuantity, setDispatchQuantity] = useState<number>(0);
+  const [truckCount, setTruckCount] = useState<number>(0);
 
   const handleTruckDeparture = () => {
     if (dispatchQuantity > 0 && dispatchQuantity <= 20 && warehouseItems >= dispatchQuantity && warehouseItems - dispatchQuantity >= 20) {
       setWarehouseItems(warehouseItems - dispatchQuantity);
       // setIsTruckLeft(true);
+      setTruckCount(truckCount + 1)
       setDispatchQuantity(0);
     }
   };
@@ -21,7 +23,7 @@ const LogisticsDashboard: React.FC = () => {
     <div className="dashboard">
       <h1>Logistics Dashboard</h1>
       <div className="dashboard-content">
-        <WarehouseInventory itemCount={warehouseItems} />
+        <WarehouseInventory itemCount={warehouseItems} truckCount={truckCount}/>
         <DeliveryStatus 
           isTruckLeft={isTruckLeft} 
           onTruckDeparture={handleTruckDeparture} 
